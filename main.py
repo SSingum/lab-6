@@ -16,6 +16,14 @@ def menu_print():
     print("2. Decode")
     print("3. Quit")
 
+''' Rosalinda Phipps '''
+def decoder(password):
+    new_password = ""
+    for i in range(0, len(original)):
+        new_password += str((int(original[i]) + 7) % 10)
+    return new_password
+
+
 
 
 if __name__ == "__main__":
@@ -33,11 +41,11 @@ if __name__ == "__main__":
         if menu_selection == "2":
             original = password
             password = encoder(original)
-            print(f"The encoded password is {password}, and the original password is {original}.")
+            decoded_password = decoder(password)
+            print(f"The encoded password is {password}, and the original password is {decoded_password}.")
 
         if menu_selection == "3":
             break
-
 
 
 
